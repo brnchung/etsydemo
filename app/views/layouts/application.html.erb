@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Etsydemo</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= render 'layouts/header' %>
+
+<div class="container">
+	<%= yield %>
+	<%= render 'layouts/footer' %>
+</div>
+
+</body>
+</html>
+
+<!-- Application Layout File affects every file/page we have | YIELD means it takes page specific code and inserts it there -->
+<!-- ERB means EMBEDDED RUBY, use <% tags to invoke ERB, allows us to use ALL RUBY FEATURES inside HTML file
+# html.erb means it converts all the ruby into a normal html file
+# USE <%= to have the code show up on the HTML file, do not include the equal sign when otherwise, always end without the equal sign
