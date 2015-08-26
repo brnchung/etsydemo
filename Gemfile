@@ -1,9 +1,10 @@
 source 'https://rubygems.org'
+# ruby '2.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -41,4 +42,16 @@ gem 'bootstrap-sass', '~> 3.3.5'
 
 gem "paperclip", "~> 3.0"
 
+group :production  do
+	gem 'pg'
+	gem 'rails_12factor'
+end
+
+group :development, :test do
+	gem 'sqlite3'
+end
+
+# Gems used in [enter environment]
+
 # WHEN WE INCLUDE A NEW GEM, WE HAVE TO USE "BUNDLE INSTALL" IN COMMAND LINE, AND THEN RESTART THE RAILS SERVER
+# Rails lets us use different gems in different environments (development (localhost)/production (launching or live)/test)
