@@ -17,3 +17,6 @@
 
 # Ignore application configuration
 /config/application.yml
+
+# Ignores files uploaded to localhost, so images uploaded to localhost don't get send to Github
+/public/system
