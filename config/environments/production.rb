@@ -75,4 +75,8 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # Required for Devise Gem (for accounts and sign in/log in), 
+  # *** Remember to change default URL/localhost 3000 to actual application host [Heroku] or to OUR REAL DOMAIN NAME ***
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 end

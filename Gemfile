@@ -41,6 +41,7 @@ gem 'bootstrap-sass', '~> 3.3.5'
 gem "paperclip", "~> 3.0"
 gem "paperclip-dropbox", ">= 1.1.7"
 gem "figaro"
+gem 'devise'
 
 group :production  do
 	gem 'pg'
@@ -55,3 +56,4 @@ end
 
 # WHEN WE INCLUDE A NEW GEM, WE HAVE TO USE "BUNDLE INSTALL" IN COMMAND LINE, AND THEN RESTART THE RAILS SERVER
 # Rails lets us use different gems in different environments (development (localhost)/production (launching or live)/test)
+

@@ -11,6 +11,16 @@
 <%= render 'layouts/header' %>
 
 <div class="container">
+	
+	<% flash.each do |name, msg| %>
+		<% if msg.is_a?(String) %>
+			<div class="alert alert-<%= name.to_s == 'notice' ? 'success' : 'danger' %> alert-dismissable">
+				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+				<%= content_tag :div, msg, :id => "flash_#{name}" %>
+			</div>
+		<% end %>
+	<% end %>
+	
 	<%= yield %>
 	<%= render 'layouts/footer' %>
 </div>
@@ -22,3 +32,4 @@
 <!-- ERB means EMBEDDED RUBY, use <% tags to invoke ERB, allows us to use ALL RUBY FEATURES inside HTML file
 # html.erb means it converts all the ruby into a normal html file
 # USE <%= to have the code show up on the HTML file, do not include the equal sign when otherwise, always end without the equal sign
+# The P tags let us send messages to our users
