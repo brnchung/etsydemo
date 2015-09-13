@@ -8,6 +8,9 @@ class Listing < ActiveRecord::Base
       				    :path => ":style/:id_:filename"
       # validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
     end
+    validates :name, :description, :price, presence: true
+    validates :price, numericality: { greater_than: 0 }
+    validates_attachment_presence :image
 end
 
 # Customize the Rails Model code to be applicable to your website
@@ -21,3 +24,6 @@ end
 # ID is the number of the listing we are creating, important, gives each file/photo a unique name
 
 # This partition of Heroku/Localhost and Dropbox/Laptop is to avoid any possible errors when deleting listings
+
+# can also validate listing data to make sure that name/description/price fields cannot be left blank
+# presence: true just checks to see if a text field is not blank
