@@ -11,6 +11,8 @@ class Listing < ActiveRecord::Base
     validates :name, :description, :price, presence: true
     validates :price, numericality: { greater_than: 0 }
     validates_attachment_presence :image
+
+    belongs_to :user
 end
 
 # Customize the Rails Model code to be applicable to your website
@@ -27,3 +29,5 @@ end
 
 # can also validate listing data to make sure that name/description/price fields cannot be left blank
 # presence: true just checks to see if a text field is not blank
+
+# use belongs_to because each listing belongs to one user
