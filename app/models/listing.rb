@@ -13,6 +13,7 @@ class Listing < ActiveRecord::Base
     validates_attachment_presence :image
 
     belongs_to :user
+    has_many :orders
 end
 
 # Customize the Rails Model code to be applicable to your website
